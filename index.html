@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-Hant" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anon Tokyo - 獻給所有迷途者的樂章 | BanG Dream! It's MyGO!!!!! 聯名</title>
+    <!-- 載入 Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 載入 Inter 字體 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <script>
+        // Tailwind CSS 自訂配置
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // 優先使用 Inter，繁體中文回退到 Noto Sans TC
+                        sans: ['Inter', '"Noto Sans TC"', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in-up': 'fadeInUp 1s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        /* 增加一個平滑的滾動條樣式 (可選) */
+        body::-webkit-scrollbar {
+            width: 8px;
+        }
+        body::-webkit-scrollbar-track {
+            background: #18181b; /* zinc-900 */
+        }
+        body::-webkit-scrollbar-thumb {
+            background-color: #3f3f46; /* zinc-700 */
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 font-sans antialiased">
+
+    <!-- 1. 導覽列 Navigation -->
+    <header class="fixed top-0 left-0 w-full bg-zinc-950/80 backdrop-blur-md z-50 border-b border-zinc-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- 品牌 Logo -->
+            <a href="#" class="text-2xl font-black tracking-widest uppercase">
+                Anon Tokyo
+            </a>
+            <!-- 導覽連結 -->
+            <ul class="flex space-x-6 md:space-x-8">
+                <li><a href="#concept" class="text-zinc-300 hover:text-white transition-colors duration-300">品牌理念</a></li>
+                <li><a href="#collection" class="text-zinc-300 hover:text-white transition-colors duration-300">聯名系列</a></li>
+                <li><a href="#shop" class="text-zinc-300 hover:text-white transition-colors duration-300">線上商店</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. 英雄區塊 Hero Section -->
+    <main>
+        <section class="h-screen min-h-[700px] flex items-center justify-center relative px-6 text-center overflow-hidden">
+            <!-- 背景圖片 (使用 Placehold.co 確保圖片有效) -->
+            <div class="absolute inset-0 z-0">
+                <img 
+                    src="https://placehold.co/1920x1080/1a1a1a/333333?text=MyGO!!!!!" 
+                    alt="BanG Dream! It's MyGO!!!!! 形象"
+                    class="w-full h-full object-cover opacity-30"
+                    onerror="this.src='https://placehold.co/1920x1080/1a1a1a/ffffff?text=圖片載入失敗'"
+                >
+                <!-- 漸層遮罩 -->
+                <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/50 to-transparent"></div>
+            </div>
+            
+            <!-- 英雄區塊內容 -->
+            <div class="relative z-10 flex flex-col items-center animate-fade-in-up" style="animation-delay: 0.2s;">
+                <span class="text-sm font-bold text-blue-300 tracking-widest uppercase mb-4">
+                    Anon Tokyo x BanG Dream! It's MyGO!!!!!
+                </span>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-black max-w-4xl leading-tight">
+                    「你也願意，不計一切地<span class="text-blue-400">迷失</span>嗎？」
+                </h1>
+                <p class="text-lg md:text-xl text-zinc-400 mt-6 max-w-2xl">
+                    獻給所有在都市中尋找歸宿的「迷子」。首個聯名系列，現已發售。
+                </p>
+                <a href="#collection" class="mt-10 px-8 py-3 bg-white text-zinc-900 font-bold rounded-full uppercase tracking-wider hover:bg-zinc-200 transition-all duration-300 transform hover:scale-105">
+                    探索系列
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. 品牌理念 Concept Section -->
+        <section id="concept" class="container mx-auto px-6 py-24 md:py-32 text-center max-w-3xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                我們是 <span class="text-blue-400">Anon</span>
+            </h2>
+            <div class="text-lg text-zinc-300 space-y-6 leading-relaxed">
+                <p>
+                    "Anon" 來自「匿名」(Anonymous)。
+                </p>
+                <p>
+                    我們是為所有在人群中感到孤獨、在生活中感到迷茫、卻又渴望被理解的「迷途者」而設計的品牌。我們不定義你，我們只提供遮蔽，讓你有勇氣繼續前行。
+                </p>
+                <p>
+                    這次，我們與 <strong class="font-bold text-white">It's MyGO!!!!!</strong> 合作，將她們在迷途中掙扎、受傷，卻又彼此牽絆的故事，化作穿戴在身的詩篇。
+                </p>
+            </div>
+        </section>
+
+        <!-- 4. 聯名系列 Collection Section -->
+        <section id="collection" class="bg-zinc-900 py-24 md:py-32">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
+                    聯名系列：『<span class="text-blue-400">春日影</span>』
+                </h2>
+                
+                <!-- 商品網格 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- 商品 1: 「燈」 T恤 -->
+                    <div class="bg-zinc-800 rounded-xl overflow-hidden shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/30">
+                        <img 
+                            src="https://ae01.alicdn.com/kf/S8db127357def4296bab220b2eb3c085bO.jpg" 
+                            alt="「燈」刺繡 T恤" 
+                            class="w-full h-96 object-cover"
+                            onerror="this.src='https://placehold.co/600x800/cccccc/333?text=圖片載入失敗'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">「燈」刺繡 T恤</h3>
+                            <p class="text-zinc-400 mb-4">胸前精緻的「一生、春日影」歌詞刺繡。重磅棉質，寬鬆版型，象徵著那份沉重卻又不想放手的執著。</p>
+                            <span class="text-lg font-bold text-blue-300">NT$ 1,800</span>
+                        </div>
+                    </div>
+
+                    <!-- 商品 2: 「愛音」連帽外套 -->
+                    <div class="bg-zinc-800 rounded-xl overflow-hidden shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/30">
+                        <img 
+                            src="https://gw.alicdn.com/imgextra/i3/2209040795760/O1CN01A8JQ3Q1sQ8DlxPhnD_!!2209040795760.jpg_Q75.jpg_.webp" 
+                            alt="「愛音」標誌性連帽外套" 
+                            class="w-full h-96 object-cover"
+                            onerror="this.src='https://placehold.co/600x800/cccccc/333?text=圖片載入失敗'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">「愛音」標誌性連帽外套</h3>
+                            <p class="text-zinc-400 mb-4">不對稱拉鍊設計，如同她試圖融入卻又突兀的自我。袖口隱藏著「迷子」字樣，只在不經意間顯露。</p>
+                            <span class="text-lg font-bold text-blue-300">NT$ 3,200</span>
+                        </div>
+                    </div>
+
+                    <!-- 商品 3: 「樂奈」貓耳毛帽 -->
+                    <div class="bg-zinc-800 rounded-xl overflow-hidden shadow-xl transform transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-900/30">
+                        <img 
+                            src="https://truth.bahamut.com.tw/s01/202501/forum/47099/a34fbc412f5484c3555a93bf72766c02.JPG" 
+                            alt="「樂奈」貓耳毛帽" 
+                            class="w-full h-96 object-cover"
+                            onerror="this.src='https://placehold.co/600x800/cccccc/333?text=圖片載入失敗'"
+                        >
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">「樂奈」貓耳毛帽</h3>
+                            <p class="text-zinc-400 mb-4">可拆卸的貓耳。戴上時，你是自由的野貓；拆下時，你回歸「匿名」。附贈「soyo」字樣的金屬別針。</p>
+                            <span class="text-lg font-bold text-blue-300">NT$ 1,200</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. 商店連結 Shop Section -->
+        <section id="shop" class="container mx-auto px-6 py-24 md:py-32 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                成為「迷子」的一員
+            </h2>
+            <p class="text-lg text-zinc-400 mb-10 max-w-2xl mx-auto">
+                我們的設計不僅是衣服，更是一種庇護。穿上 Anon，在迷失的路上找到彼此。
+            </p>
+            <a href="#" class="px-10 py-4 bg-blue-600 text-white font-bold rounded-full uppercase tracking-wider hover:bg-blue-500 transition-all duration-300 transform hover:scale-105">
+                前往線上商店
+            </a>
+        </section>
+
+    </main>
+
+    <!-- 6. 頁腳 Footer -->
+    <footer class="border-t border-zinc-800 bg-zinc-900">
+        <div class="container mx-auto px-6 py-12 flex flex-col md:flex-row justify-between items-center text-center md:text-left">
+            <div class="mb-6 md:mb-0">
+                <a href="#" class="text-xl font-black tracking-widest uppercase">
+                    Anon Tokyo
+                </a>
+                <p class="text-sm text-zinc-500 mt-2">
+                    © 2025 Anon Tokyo. All Rights Reserved.
+                </p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors">Twitter</a>
+                <a href="#" class="text-zinc-400 hover:text-white transition-colors">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
