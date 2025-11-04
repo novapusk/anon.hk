@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HACKED</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#0b1221 0%, #071426 100%);
+      color: #e6eef8;
+      margin: 0;
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      gap: 24px;
+      padding: 32px;
+    }
+    .card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+      padding: 20px;
+      border-radius: 10px;
+      width: 360px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    }
+    h1 { margin: 0 0 12px; font-size: 18px; color: #d9eefb; }
+    label { display:block; margin:10px 0 4px; font-size:13px; color:#bcd7f2; }
+    input[type="text"], input[type="password"] {
+      width:100%; padding:10px; border-radius:6px; border:1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.02); color: #eaf6ff;
+    }
+    .btn {
+      margin-top:14px; width:100%; padding:10px; border-radius:6px; border:none;
+      background: linear-gradient(90deg,#2b8cff,#105bd6); color:white; font-weight:600;
+      cursor:pointer;
+    }
+    .btn:active { transform: translateY(1px); }
+
+    /* CMD window */
+    .cmd {
+      width: 760px;
+      max-width: calc(100% - 64px);
+      height: 300px;
+      background: #0b0f12;
+      color: #8be88b;
+      font-family: "Consolas", "Courier New", monospace;
+      border-radius: 8px;
+      padding: 12px;
+      box-sizing: border-box;
+      border: 1px solid rgba(255,255,255,0.04);
+      display: none;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cmd .title {
+      display:flex; justify-content:space-between; align-items:center;
+      color: #cfeef0; font-weight:600; font-size:13px; margin-bottom:6px;
+    }
+    .cmd .screen {
+      flex:1; overflow:auto; padding:8px; background: transparent; white-space:pre-wrap;
+      line-height:1.4; font-size:13px;
+    }
+    .small {
+      font-size:12px; color:#9fbdd8;
+    }
+    .hint { font-size:12px; color:#9fbdd8; margin-top:8px; }
+
+    /* small footer note */
+    .muted { font-size:12px; color:#98b3cf; text-align:center; margin-top:12px; }
+  </style>
+</head>
+<body>
+  <div class="card" aria-live="polite">
+    <h1>嶺南中學週年慶禮品卡贈送活動</h1>
+    <form id="demoForm" onsubmit="event.preventDefault(); showFakeProgram();">
+      <label for="user">Google帳戶</label>
+      <input id="user" name="user" type="text" autocomplete="off" placeholder="your.username" />
+      <label for="pw">密碼</label>
+      <input id="pw" name="pw" type="password" autocomplete="off" placeholder="password" />
+      <button class="btn" type="submit">抽獎</button>
+    </form>
+    <div class="hint"></div>
+    <div class="muted"></div>
+  </div>
+
+  <div class="cmd" id="cmdWindow" role="dialog" aria-label="Simulated command window">
+    <div class="title">
+      <div>cmd.exe - Simulated</div>
+      <div class="small">Safe Visual Simulation</div>
+    </div>
+    <div class="screen" id="cmdScreen" aria-live="polite"></div>
+  </div>
+
+  <script>
+    // NOTE: This script is intentionally safe: it never sends credentials or performs network requests.
+    // The "autostart" effect is simulated with a timer. The "ping" output is generated locally as text.
+
+    // Simulate an "autostart" when the page is opened or when the user submits the form.
+    // If you want the autostart demo to start automatically on page load, call showFakeProgram() in DOMContentLoaded.
+    let autostartTimer = null;
+
+    // Simple utility to append a line to the CMD screen
+    function appendCmdLine(text, cls) {
+      const el = document.getElementById('cmdScreen');
+      const line = document.createElement('div');
+      if (cls) line.className = cls;
+      line.textContent = text;
+      el.appendChild(line);
+      el.scrollTop = el.scrollHeight;
+    }
+
+    // Create an endlessly looping simulated ping output (no network requests)
+    function startPingSimulation(host) {
+      const minDelay = 400;
+      const maxDelay = 1000;
+      let seq = 1;
+      // show initial header
+      appendCmdLine('Pinging ' + host + ' with 32 bytes of data:');
+
+      // produce simulated replies; we keep a reference to the interval via a closure
+      function producePing() {
+        // create varied fake times and TTL to look more realistic
+        const rtt = (Math.random() * 50 + 10).toFixed(1); // 10.0 - 60.0 ms
+        const ttl = Math.floor(Math.random() * 50) + 50; // 50 - 99
+        appendCmdLine('Reply from ' + host + ': bytes=32 time=' + rtt + 'ms TTL=' + ttl);
+        seq += 1;
+        // occasionally show a "Request timed out" line
+        if (Math.random() < 0.06) {
+          appendCmdLine('Request timed out.');
+        }
+      }
+
+      // schedule repeated calls using varying delays to feel dynamic
+      let running = true;
+      (function loop() {
+        if (!running) return;
+        const delay = Math.random() * (maxDelay - minDelay) + minDelay;
+        setTimeout(() => {
+          producePing();
+          loop();
+        }, delay);
+      })();
+
+      // return a stopper
+      return () => { running = false; appendCmdLine('Ping simulation stopped.'); };
+    }
+
+    // Show the fake program / simulated CMD
+    let stopPing = null;
+    function showFakeProgram() {
+      // Hide any UI interactions (for demo only)
+      document.getElementById('cmdWindow').style.display = 'flex';
+      // Clear previous output
+      document.getElementById('cmdScreen').textContent = '';
+      appendCmdLine('Microsoft Windows [Version 10.0.19041.1]');
+      appendCmdLine('(c) 2020 Example Corp. All rights reserved.');
+      appendCmdLine('');
+      // Start the ping simulation for lingnan.edu.hk purely as a text animation
+      if (stopPing) stopPing();
+      stopPing = startPingSimulation('lingnan.edu.hk');
+    }
+
+    // Optional: simulate autostart a few seconds after the page is opened
+    // For an educational demo we wait briefly so the user can interact first.
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set a short timer to auto-open the simulated program for demonstration
+      autostartTimer = setTimeout(() => {
+        appendCmdLine('Autostart simulation triggered. Opening program...');
+        showFakeProgram();
+      }, 3000); // 3 seconds delay to simulate autostart
+    });
+
+    // For safety the demo never reads or uses the form values beyond showing a short message
+    document.getElementById('demoForm').addEventListener('submit', (ev) => {
+      // Visual-only confirmation; do not send or store credentials
+      const u = document.getElementById('user').value || '[no username entered]';
+      appendCmdLine('Launching program for ' + u + ' (local demo only).');
+    });
+
+    // Accessibility: allow closing the simulation with Escape to stop animation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const win = document.getElementById('cmdWindow');
+        if (win.style.display !== 'none') {
+          win.style.display = 'none';
+          if (stopPing) stopPing();
+        }
+      }
+    });
+  </script>
+</body>
+</html>

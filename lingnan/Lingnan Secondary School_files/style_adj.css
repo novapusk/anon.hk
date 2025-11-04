@@ -1,0 +1,259 @@
+/* Editor Content Start */
+
+/* Set cms_content style Start */
+
+.cms_content h1,
+.cms_content h2,
+.cms_content h3,
+.cms_content h4,
+.cms_content h5,
+.cms_content h6 { 
+    font-size:revert; 
+    font-weight: 700; 
+    border: 0;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.2; 
+}
+/* .cms_content { 
+    min-height: 500px; 
+} */
+.cms_content p { 
+    border: 0;
+    margin: 0px;
+    padding: 0px;
+    line-height: 1.2; 
+}
+.cms_content img { 
+    max-width: 100%; 
+    height: auto !important; 
+}
+.cms_content table,
+.cms_content iframe { 
+    max-width: 100%; 
+}
+.cms_content dl,
+.cms_content dl li,
+.cms_content ol,
+.cms_content ol li,
+.cms_content ul,
+.cms_content ul li { 
+    margin: 0px 0px 0px 12px;
+    padding: 0px 0px 0px 0px;
+    line-height: 2rem; 
+    border: 0; 
+    list-style-type: revert; 
+}
+.cms_content table { 
+    border-collapse: initial; 
+}
+.cms_content a { 
+    color:black; 
+}
+.cms_content a:hover { 
+    text-decoration:none; 
+}
+
+/* Set cms_content style End */
+
+/* Set Special Style Start */
+
+/****************************************/
+
+/* .cms_content .desc-table table {
+    color:black;
+    width: 100%;
+    border: 0 !important;
+    border-collapse: collapse!important;
+}   
+.cms_content .desc-table td {
+    padding: 17px 18px;
+}
+.cms_content .desc-table td::before {
+    content: "\f061";
+    color: #93c1dd;
+    margin-right: 4px;
+    padding-right:5px;
+    font-family: 'FontAwesome';
+}
+.cms_content .desc-table tr:nth-child(odd) {
+    background-color: #f3f8fbf3;
+}
+.cms_content .desc-table tr:nth-child(even) {
+    background-color: #e8f2f8;
+} */
+
+/****************************************/
+
+ /* .cms_content  h4::after{
+    content: '';
+    display: block;
+    width: 100%;
+    height: 3px;
+    max-width: 50px;
+    margin: 10px 0px;
+    background: #37b787;
+}  */
+
+/****************************************/
+
+/* Set Special Style End */
+
+/* Set responsive Style Start */
+.cms_content .img-responsive-150 img{
+    height:150px!important;
+    object-fit: contain;
+}
+.cms_content .img-responsive-200 img{
+    height:200px!important;
+    object-fit: contain;
+}
+.cms_content .img-responsive-300 img{
+    height:300px!important;
+    object-fit: contain;
+}
+.cms_content .img-responsive-400 img{
+    height:400px!important;
+    object-fit: contain;
+}
+.cms_content .img-responsive-500 img{
+    height:500px!important;
+    object-fit: contain;
+}
+
+.cms_content table.mScroll { 
+    overflow-x: scroll; 
+    max-width: 100%; 
+    display: block; 
+}
+
+.cms_content table.tb_logo td img { 
+    max-width: 100%; 
+}
+
+@media screen and (max-width: 1200px){
+    .cms_content table.tb_logo { 
+        display: block; 
+    }
+    .cms_content table.tb_logo tr { 
+        display: block; 
+    }
+    .cms_content table.tb_logo td { 
+        display: inline-block; 
+        width: 49% !important; 
+        margin-bottom: 1px; 
+        position: relative; 
+    }
+    .cms_content table.tb_logo th { 
+        display: block; 
+        width: 100%;  
+    }
+}
+@media screen and (max-width: 1025px){
+    .cms_content table.padRowH { 
+        display: block; 
+        position: relative; 
+    }
+    .cms_content table.padRowH tr td { 
+        display: block; 
+        width: 100% !important; 
+        margin-bottom: 1px; 
+        position: relative; 
+    }
+    .cms_content table.noRow tr td { 
+        display: table-cell; 
+    }
+}
+
+@media screen and (max-width: 769px){
+    .cms_content table.padRowV { 
+        display: block; 
+        position: relative; 
+    }
+    .cms_content table.padRowV tr td { 
+        display: block; 
+        width: 100% !important; 
+        margin-bottom: 1px; 
+        position: relative; 
+    }
+    .cms_content table.noRow tr td { 
+        display: table-cell; 
+    }
+}
+
+@media screen and (max-width: 520px){
+    .cms_content table.mRow { 
+        display: block; 
+        position: relative; 
+    }
+    .cms_content table.mRow tr td { 
+        display: block; 
+        width: 100% !important; margin-bottom: 1px; 
+        position: relative; 
+    }
+    .cms_content table.noRow tr td { 
+        display: table-cell; 
+    }
+}
+
+@media screen and (max-width: 400px){
+    .cms_content table.tb_logo td {  
+        width: 100% !important; 
+    }
+    .cms_content .img-responsive-150 img{
+        height:100%!important; 
+    }
+    .cms_content .img-responsive-200 img{
+        height:100%!important; 
+    }
+    .cms_content .img-responsive-300 img{
+        height:100%!important; 
+    }
+    .cms_content .img-responsive-400 img{
+        height:100%!important; 
+    }
+    .cms_content .img-responsive-500 img{
+        height:100%!important; 
+    }
+}
+
+/* Set responsive Style End */
+
+/* Editor Content End */
+
+/* Customer Style Start */
+video {
+    height: 730px;
+    
+}
+.banner-img img{
+    height:730px;
+    object-fit: cover;
+
+}
+
+
+li.side-lv2 {
+    padding:5px 0px;
+}
+.side-lv2 a{
+    padding: 10px 5px;
+}
+@media screen and (max-width: 2000px){
+    video {
+        aspect-ratio: 16/9;
+        height: 100%;
+    }
+    .banner-img img{
+        aspect-ratio: 16/9;
+         height: 100%;
+
+    } 
+
+
+}
+/* Customer Style End */
+
+
+
+
